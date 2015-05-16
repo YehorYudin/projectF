@@ -1,0 +1,11 @@
+<h1>Login</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'kachok:perform_login' %}" method="post">
+{% csrf_token %}
+    Email: <input type="email" name="email" id="email" /> <br><br>
+    Password: <input type="password" name="password" id="password" /> <br><br>
+
+<input type="submit" value="Login" />
+</form>
